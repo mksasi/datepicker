@@ -1,7 +1,7 @@
 # datepicker
 
 Angular 2+ Simple and minimal datepicker component, added support for Angular 9
-Forked from bleenco/ng2-datepicker
+(Forked from bleenco/ng2-datepicker)
 
 ## Installation
 

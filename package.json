@@ -1,6 +1,6 @@
 {
   "name": "@mksasi/datepicker",
-  "version": "9.0.1",
+  "version": "9.0.2",
   "main": "./dist/bundles/ng2-datepicker.umd.js",
   "module": "./dist/ng2-datepicker.es5.js",
   "es2015": "./dist/ng2-datepicker.js",
@@ -66,7 +66,7 @@
     "@angular-devkit/build-angular": "~0.901.6"
   },
   "dependencies": {
-    "date-fns": "^1.29.0",
+    "date-fns": "^2.14.0",
     "ngx-slimscroll": "^9.0.0"
   }
 }

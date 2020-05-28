@@ -6,7 +6,7 @@ import {
   addMonths,
   subMonths,
   setYear,
-  eachDay,
+  eachDayOfInterval,
   getDate,
   getMonth,
   getYear,
@@ -181,8 +181,8 @@ export class NgDatepickerComponent implements ControlValueAccessor, OnInit, OnCh
     const today = new Date(); // this const was added because during my tests, I noticed that at this level this.date is undefined
     this.minYear = this.options && this.options.minYear || getYear(today) - 30;
     this.maxYear = this.options && this.options.maxYear || getYear(today) + 30;
-    this.displayFormat = this.options && this.options.displayFormat || 'MMM D[,] YYYY';
-    this.barTitleFormat = this.options && this.options.barTitleFormat || 'MMMM YYYY';
+    this.displayFormat = this.options && this.options.displayFormat || 'MMM dd, yyyy';
+    this.barTitleFormat = this.options && this.options.barTitleFormat || 'MMMM yyyy';
     this.dayNamesFormat = this.options && this.options.dayNamesFormat || 'ddd';
     this.barTitleIfEmpty = this.options && this.options.barTitleIfEmpty || 'Click to select a date';
     this.firstCalendarDay = this.options && this.options.firstCalendarDay || 0;
@@ -248,7 +248,7 @@ export class NgDatepickerComponent implements ControlValueAccessor, OnInit, OnCh
     const start = startOfMonth(actualDate);
     const end = endOfMonth(actualDate);
 
-    this.days = eachDay(start, end).map(date => {
+    this.days = eachDayOfInterval({start: start, end: end}).map(date => {
       return {
         date: date,
         day: getDate(date),
